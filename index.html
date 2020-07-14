@@ -94,7 +94,9 @@
         // If the place has a geometry, then present it on a map.
         if (place.geometry.viewport) {
           map.fitBounds(place.geometry.viewport);
-        } else {
+          map.setZoom(10);
+        } 
+        else {
           map.setCenter(place.geometry.location);
           map.setZoom(3);  // Why 17? Because it looks good.
         }
@@ -183,9 +185,6 @@
     </script>
     <!-- Replace following script src -->
     <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>   
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyjvumcCIvT-pnRpzFNMBTYVyIL90garQ&callback=initMap">
-    </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyjvumcCIvT-pnRpzFNMBTYVyIL90garQ&libraries=places&callback=initMap"
     async defer></script>
   </body>
